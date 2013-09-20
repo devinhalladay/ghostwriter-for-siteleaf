@@ -1,0 +1,7 @@
+.*
+Gemfile*
+Guardfile
+LICENSE
+README.md
+sass/*
+sass

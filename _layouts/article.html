@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+{% capture css %}/public/css{% endcapture %}
+{% capture js %}/public/js{% endcapture %}
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Ghostwriter</title>
+  <meta name="description" content="A clean and tidy AJAX driven theme for Ghost.">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" type="text/css" href="{{ css }}/normalize.css">
+  <link rel="stylesheet" type="text/css" href="{{ css }}/nprogress.css">
+  <link rel="stylesheet" type="text/css" href="{{ css }}/main.css">
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300">
+</head>
+<body class="home-template">
+
+  <header class="site-header">
+    <div class="container">
+      <div class="site-title-wrapper">
+        <h1 class="site-title"><a class="js-ajax-link" href="{{ permalink }}">{{ title }}</a></h1>
+
+        <a class="button-square js-ajax-link js-show-index" href="{{ permalink }}"><span class="icon icon-menu"></span></a>
+      </div>
+    </div>
+  </header>
+
+  <div id="wrapper">
+    <div id="ajax-container">
+
+
+      <div id="latest-post" class="container">
+        <article class="post">
+            <header class="post-header">
+              <h1 class="post-title">{{ title }}</h1>
+              <p class="post-date"><time datetime="{{ date | date: "%b %d, %Y" }}">Published {{ date | date: "%B %d, %Y" }}</time></p>
+            </header>
+
+            <div class="post-content">
+              {{ body }}
+            </div>
+        </article>
+      </div>
+
+    {% include "includes/post-index" %}
+
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="site-title-wrapper">
+      <h1 class="site-title"><a class="js-ajax-link" href="{{ site.permalink }}">{{ site.title }}</a></h1>
+
+      <a class="button-square button-jump-top js-jump-top" href="#"><span class="icon icon-up"></span></a>
+    </div>
+
+    <p class="footer-copyright">&copy; 2013. Powered by <a href="http://siteleaf.com">Siteleaf</a>.</p>
+  </div>
+</footer>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<script type="text/javascript" src="{{ js }}/jquery.history.js"></script>
+<script type="text/javascript" src="{{ js }}/nprogress.js"></script>
+<script type="text/javascript" src="{{ js }}/scripts.js"></script>
+
+</body>
+</html>
